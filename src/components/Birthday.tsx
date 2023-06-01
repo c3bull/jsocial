@@ -6,7 +6,7 @@ export default function Birthday() {
     const today = format(new Date, 'MM-dd')
 
     return (
-        <div className='pt-32 absolute right-12'>
+        <div className='pt-32 absolute right-20'>
             {people.map(({name, birthday}, key) => (
                 <div key={key}>
                     {birthday && birthday.substr(5, 5) === today &&
