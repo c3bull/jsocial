@@ -1,8 +1,22 @@
-export default function Birthday(){
+import {format} from 'date-fns'
+import {people} from "../data/people";
 
-    return(
-        <div>
-            Birthday
+export default function Birthday() {
+
+    const today = format(new Date, 'MM-dd')
+
+    return (
+        <div className='pt-32 absolute right-12'>
+            {people.map(({name, birthday}, key) => (
+                <div key={key}>
+                    {birthday && birthday.substr(5, 5) === today &&
+                        <div className='flex gap-1'>
+                            <p className='font-semibold'>{name}</p>
+                            ma dziś urodziny
+                        </div>
+                    }
+                </div>
+            ))}
         </div>
     )
 }

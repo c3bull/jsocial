@@ -1,44 +1,34 @@
 import {useState} from "react";
 import {people} from "../data/people";
 
-type People = {
-    name: string
-    email: string | null
-    city: string | null
-    mac: string
-    timestamp: string
-    creditcard: string | null
-}
-
 export default function SearchBar() {
 
-    const [searchInput, setSearchInput] = useState('');
+    const [searchInput, setSearchInput] = useState(0);
+    const [filteredList, setFilteredList] = useState([]);
+
     const goToDetailsButton = (id) => {
     };
 
-    const [filteredResults, setFilteredResults] = useState([]);
-    const searchItems = (searchValue) => {
-        setSearchInput(searchValue)
-        if (searchInput.length > 1) {
-            const filteredData = people.filter((item: People) => {
-                return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
-            })
-            setFilteredResults(filteredData)
-        } else {
-            setFilteredResults(people)
-        }
-    }
+    const filterBySearch = (event) => {
+        const query = event.target.value;
+        setSearchInput(query.length)
+        var updatedList = [...people];
+        updatedList = updatedList.filter(({name}) => {
+            return Object.values(name).join('').toLowerCase().indexOf(query.toLowerCase()) !== -1;
+        });
+        setFilteredList(updatedList);
+    };
 
     return (
         <div className=''>
             <div className="navbar-search">
                 <input className="bg-gray-100 h-10 p-4 rounded-full focus:outline-0" placeholder="szukaj..."
-                       onChange={(e) => searchItems(e.target.value)}/>
+                       onChange={filterBySearch}/>
             </div>
 
-            <div className="absolute top-16 left-0 w-96 overflow-y-auto max-h-96 shadow-lg">
-                {searchInput.length > 2 ? (
-                    filteredResults.map((item) => {
+            <div className="bg-white absolute top-16 left-0 w-96 overflow-y-auto max-h-96 shadow-lg">
+                {
+                    searchInput > 1 && filteredList.map((item) => {
                         return (
                             <div className="flex items-center gap-4 m-2 hover:bg-gray-200 p-2 rounded-md cursor-pointer"
                                  onClick={() => {
@@ -58,7 +48,6 @@ export default function SearchBar() {
                             </div>
                         )
                     })
-                ) : false
                 }
             </div>
         </div>

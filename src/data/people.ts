@@ -3,49 +3,34 @@ export const people = [
         "name": "Mr. Alanis Legros",
         "email": "everette@halvorsonjacobs.biz",
         "city": null,
-        "mac": "d2:8c:3b:70:5b:08",
-        "timestamp": "2015-04-25 22:44:57 +0700",
-        "creditcard": null
+        "birthday": "1999-06-01",
     },
     {
         "name": "Anabelle Roob",
         "email": "dagmar.cole@hoppedare.net",
         "city": null,
-        "mac": "ae:a1:8e:a8:7e:26",
-        "timestamp": "2015-04-25 12:04:24 +0700",
-        "creditcard": null
+        "birthday": "1999-06-01",
     },
     {
         "name": "Monserrat Hansen V",
         "email": null,
         "city": null,
-        "mac": "b6:b5:e8:2c:41:71",
-        "timestamp": "2015-04-25 11:11:12 +0700",
-        "creditcard": null
+        "birthday": "1999-06-15",
     },
     {
         "name": "Rey Kemmer Jr.",
         "email": null,
         "city": "New Carmel",
-        "mac": "1b:90:1e:6d:13:91",
-        "timestamp": "2015-04-25 19:02:06 +0700",
-        "creditcard": null
     },
     {
         "name": "Reyes Jerde",
         "email": "alfreda_quigley@rohan.name",
         "city": null,
-        "mac": "64:62:12:27:73:03",
-        "timestamp": "2015-04-25 02:52:22 +0700",
-        "creditcard": "1228-1221-1221-1431"
     },
     {
         "name": "London Gutmann",
         "email": "linnea@quigley.org",
         "city": null,
-        "mac": "01:7c:8c:41:46:b1",
-        "timestamp": "2015-04-25 11:17:39 +0700",
-        "creditcard": null
     },
     {
         "name": "Trevor Brakus",
