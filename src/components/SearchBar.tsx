@@ -20,12 +20,9 @@ export default function SearchBar() {
     };
 
     return (
-        <div className=''>
-            <div className="navbar-search">
-                <input className="bg-gray-100 h-10 p-4 rounded-full focus:outline-0" placeholder="szukaj..."
-                       onChange={filterBySearch}/>
-            </div>
-
+        <div>
+            <input className="bg-gray-100 h-10 p-4 rounded-full focus:outline-0" placeholder="Szukaj..."
+                   onChange={filterBySearch}/>
             <div className="bg-white absolute top-16 left-0 w-96 overflow-y-auto max-h-96 shadow-lg">
                 {
                     searchInput > 1 && filteredList.map((item) => {
@@ -35,16 +32,11 @@ export default function SearchBar() {
                                      goToDetailsButton(item.id);
                                      window.location.reload();
                                  }}>
-                                <div className="search-image-div">
-                                    {/*<img src={item.image} className="search-image"/>*/}
-                                    <div
-                                        className="w-10 h-10 rounded-full bg-red-500 uppercase flex justify-center items-center">{item.name.slice(0, 2)}</div>
+                                <div
+                                    className="w-10 h-10 rounded-full bg-red-500 uppercase flex justify-center items-center">
+                                    {item.name.slice(0, 2)}
                                 </div>
-                                <div className="search-title-div">
-                                    <div className="search-title">
-                                        {item.name}
-                                    </div>
-                                </div>
+                                {item.name}
                             </div>
                         )
                     })
