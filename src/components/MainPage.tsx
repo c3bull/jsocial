@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import RightSide from "./RightSide";
 import {useState} from "react";
+import LeftSide from "./LeftSide";
 
 export default function MainPage() {
 
@@ -10,6 +11,7 @@ export default function MainPage() {
         <div className='bg-gray-50 h-screen w-full flex justify-center'>
             <Navbar/>
             <RightSide/>
+            <LeftSide/>
             <div className='pt-32 w-full flex justify-center'>
                 <div className='h-48 w-1/3 bg-white rounded-md flex flex-col p-1 gap-1 shadow-md'>
                     <div className='flex h-full gap-1'>

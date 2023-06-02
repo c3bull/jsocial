@@ -3,13 +3,13 @@ import {people} from "../data/people";
 export default function FriendsList() {
 
     return (
-        <div className='h-screen'>
+        <div className='h-screen mx-2'>
             <div className='h-[1px] bg-gray-200 w-full'/>
             <p className='py-3 uppercase font-semibold text-gray-400'>
                 Kontakty
             </p>
             {people.slice(0, 40).map(({name}, key) => (
-                <div key={key} className="flex items-center gap-4 hover:bg-gray-200 p-2 rounded-md cursor-pointer">
+                <div key={key} className="flex items-center gap-4 hover:bg-gray-200 p-2 rounded-md cursor-pointer duration-200">
                     <div>
                         {/*<img src={item.image} className="search-image"/>*/}
                         <div
